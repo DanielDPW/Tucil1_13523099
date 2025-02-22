@@ -67,6 +67,10 @@ public class Board {
         return cols;
     }
 
+    public char[][] getGrid() {
+        return grid;
+    }
+    
     public char getElmt(int r, int c) {
         return grid[r][c];
     }
