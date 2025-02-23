@@ -41,7 +41,7 @@ public class Piece {
     }
 
     private void generateVariants(char[][] base) {
-        Set<String> unique = new HashSet<>();
+        Set<String> unique = new LinkedHashSet<>();
 
         char[][] currentShape = base;
         if (checkDupes(currentShape, unique)) {

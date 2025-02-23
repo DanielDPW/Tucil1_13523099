@@ -7,6 +7,7 @@ public class Solver {
     private Board board;
     private long iterationCount;
     private long executionTime;
+    private boolean earlyStop;
 
     private boolean canPlacePiece(int r, int c, char[][] variant) {
         int rows = variant.length;
@@ -54,6 +55,14 @@ public class Solver {
     }
 
     public boolean findSolution(int idx) {
+        if (earlyStop) {
+            return false;
+        }
+        
+        if (board.isGridFull() && idx < board.getPieceCount()) {
+            earlyStop = true;
+            return false;
+        }
         if (idx >= board.getPieceCount()) {
             return board.isGridFull();
         }
@@ -61,6 +70,9 @@ public class Solver {
         Piece currentPiece = board.getPieces().get(idx);
         for (int i = 0; i < board.getRows(); i++) {
             for (int j = 0; j < board.getCols(); j++) {
+                if (earlyStop) {
+                    return false;
+                }
                 for (char[][] currentVariant : currentPiece.getVariants()) {
                     iterationCount++;
                     if (canPlacePiece(i, j, currentVariant)) {
@@ -97,6 +109,7 @@ public class Solver {
         this.board = board;
         this.iterationCount = 0;
         this.executionTime = 0;
+        this.earlyStop = false;
     }
     
 }
