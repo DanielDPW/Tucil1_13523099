@@ -56,11 +56,10 @@ public class ImageGenerator {
                 char elmt = grid[i][j];
                 graphics.setColor(colorMap.getOrDefault(elmt, Color.WHITE));
                 graphics.fillRect(cellSize * j, cellSize * i, cellSize, cellSize);
-                
+
+                graphics.setColor(Color.BLACK);
+                graphics.drawRect(cellSize * j, cellSize * i, cellSize, cellSize);
                 if (elmt != ' ' && elmt != '.') {
-                    graphics.setColor(Color.BLACK);
-                    graphics.drawRect(cellSize * j, cellSize * i, cellSize, cellSize);
-            
                     graphics.setFont(new Font("Monospaced", Font.BOLD, 20));
                     FontMetrics metrics = graphics.getFontMetrics();
                     

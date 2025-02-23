@@ -81,7 +81,7 @@ public class Main {
                     bw.newLine();
                     bw.write("Cases iterated: " + solver.getIterationCount());
 
-                    System.out.println("The solution is saved at " + outputText.getAbsolutePath());
+                    System.out.println("The solution is saved at: " + outputText.getAbsolutePath());
                 }  catch (IOException e) {
                     System.out.println("Failed to save the solution.");
                 }
@@ -92,7 +92,7 @@ public class Main {
                 BufferedImage image = imageGenerator.generateImage(outputImage);
                 try {
                     ImageIO.write(image, "png", outputImage);
-                    System.out.println("The image is saved at " + outputText.getAbsolutePath());
+                    System.out.println("The image is saved at: " + outputText.getAbsolutePath());
                 } catch (IOException e) {
                     System.out.println("Failed to save the image.");
                 }
