@@ -6,7 +6,7 @@ import piece.Piece;
 public class Solver {
     private Board board;
     private long iterationCount;
-    private long executionTime;
+    private double executionTime;
     private boolean earlyStop;
 
     private boolean canPlacePiece(int r, int c, char[][] variant) {
@@ -89,10 +89,10 @@ public class Solver {
     }
 
     public boolean solve(int idx) {
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         boolean result = findSolution(idx);
-        long endTime = System.currentTimeMillis();
-        executionTime = endTime - startTime;
+        long endTime = System.nanoTime();
+        executionTime = (endTime - startTime) / 1_000_000.0;
 
         return result;
     }
@@ -101,7 +101,7 @@ public class Solver {
         return iterationCount;
     }
 
-    public long getExecutionTime() {
+    public double getExecutionTime() {
         return executionTime;
     }
 

@@ -29,8 +29,8 @@ public class Main {
                 board.resetGrid();
                 board.displayBoard();
             }
-            System.out.println("Search time: " + solver.getExecutionTime() + " ms");
-            System.out.println("Cases considered: " + solver.getIterationCount());
+            System.out.println("Execution time: " + solver.getExecutionTime() + " ms");
+            System.out.println("Cases iterated: " + solver.getIterationCount());
 
             Scanner scanner = new Scanner(System.in);
             String ans;
@@ -77,9 +77,9 @@ public class Main {
                         }
                         bw.newLine();
                     }
-                    bw.write("Search time: " + solver.getExecutionTime() + " ms");
+                    bw.write("Execution time: " + solver.getExecutionTime() + " ms");
                     bw.newLine();
-                    bw.write("Cases considered: " + solver.getIterationCount());
+                    bw.write("Cases iterated: " + solver.getIterationCount());
 
                     System.out.println("The solution is saved at " + outputText.getAbsolutePath());
                 }  catch (IOException e) {
