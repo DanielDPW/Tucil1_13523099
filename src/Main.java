@@ -14,7 +14,7 @@ public class Main {
             return;
         }
 
-        String filename = args[0];
+        String filename = "../input/" + args[0];
         
         try {
             Board board = Parser.parseFile(filename);

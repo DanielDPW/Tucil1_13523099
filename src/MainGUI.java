@@ -76,7 +76,7 @@ public class MainGUI {
     }
 
     private void uploadFile() {
-        JFileChooser fileChooser = new JFileChooser(new File("../test"));
+        JFileChooser fileChooser = new JFileChooser(new File("../input"));
         fileChooser.setDialogTitle("Select Input File");
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Text Files", "txt"));
 
