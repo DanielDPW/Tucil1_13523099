@@ -1,8 +1,11 @@
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
+import javax.imageio.ImageIO;
 import parser.Parser;
 import board.Board;
 import solver.Solver;
+import image.ImageGenerator;
 
 public class Main {
     public static void main(String[] args) {
@@ -81,6 +84,17 @@ public class Main {
                     System.out.println("The solution is saved at " + outputText.getAbsolutePath());
                 }  catch (IOException e) {
                     System.out.println("Failed to save the solution.");
+                }
+
+                File outputImage = new File(testDirectory, outputFileName + ".png");
+                ImageGenerator imageGenerator = new ImageGenerator(board.getGrid());
+
+                BufferedImage image = imageGenerator.generateImage(outputImage);
+                try {
+                    ImageIO.write(image, "png", outputImage);
+                    System.out.println("The image is saved at " + outputText.getAbsolutePath());
+                } catch (IOException e) {
+                    System.out.println("Failed to save the image.");
                 }
             }
 
