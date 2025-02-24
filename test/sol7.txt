@@ -1,0 +1,7 @@
+AAA.CCC
+A.....D
+BE...DD
+B.....D
+BBB.FFF
+Execution time: 0.4946 ms
+Cases iterated: 2373

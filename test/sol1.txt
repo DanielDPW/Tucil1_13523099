@@ -1,0 +1,7 @@
+ABBCC
+AABCD
+EEEDD
+EEFFF
+GGGFF
+Execution time: 4.8016 ms
+Cases iterated: 100675

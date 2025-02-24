@@ -1,0 +1,5 @@
+AABBC
+EAABC
+EEDDD
+Execution time: 0.0792 ms
+Cases iterated: 191
