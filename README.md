@@ -164,6 +164,7 @@ IQ Puzzler Pro Solver is a CLI/GUI-based program made using Java, which employs 
       ```
     - **For GUI mode:**
       ```sh
+      cd bin
       java MainGUI
       ```
 
